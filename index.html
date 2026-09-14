@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="In liebevoller Erinnerung an Sergej Kampf">
 <title>Sergej Kampf – In liebevoller Erinnerung</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 html{
   scroll-behavior:smooth;
@@ -23,105 +24,144 @@ body{
 }
 
 .hero{
-  min-height:680px;
-  position:relative;
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
-  padding:40px 20px;
   text-align:center;
-}
-
-.hero:before{
-  content:"";
-  position:absolute;
-  inset:0;
+  padding:60px 20px;
   background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
-    radial-gradient(circle at center, #26313a 0, #090b0e 70%);
+    radial-gradient(circle at center,rgba(70,75,85,.25),transparent 55%),
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75));
 }
 
 .hero-content{
-  position:relative;
-  max-width:800px;
-  z-index:1;
-}
-
-.hero h1{
-  font-size:clamp(42px,9vw,82px);
-  margin:0 0 15px;
-  letter-spacing:2px;
-}
-
-.hero p{
-  font-size:clamp(18px,4vw,25px);
-  color:#d8d0c5;
-  margin:0;
+  max-width:850px;
 }
 
 .line{
-  width:90px;
+  width:150px;
   height:2px;
-  background:#c9b18a;
+  background:#cbb98d;
   margin:30px auto;
 }
 
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:70px 22px;
+h1{
+  font-size:clamp(45px,10vw,90px);
+  margin:15px 0;
+  letter-spacing:2px;
 }
 
-.card{
-  background:#11151a;
-  border:1px solid #30353b;
-  border-radius:18px;
-  padding:35px 28px;
-  margin-bottom:30px;
-  box-shadow:0 15px 40px rgba(0,0,0,.25);
-}
-
-h2{
-  font-size:32px;
-  margin-top:0;
-  color:#e7d6bb;
-}
-
-p{
-  font-size:18px;
+.subtitle{
+  font-size:clamp(20px,4vw,30px);
+  color:#d8d0c3;
 }
 
 .quote{
-  font-size:25px;
+  margin-top:55px;
+  font-size:clamp(20px,4vw,30px);
   font-style:italic;
+  color:#eee7dc;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:30px 20px 80px;
+}
+
+.card{
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(203,185,141,.25);
+  border-radius:18px;
+  padding:35px 25px;
+  margin:35px 0;
+  box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+h2{
   text-align:center;
-  color:#ddd2c3;
-  padding:25px 10px;
+  font-size:32px;
+  color:#d7c397;
+  margin-top:0;
+}
+
+p{
+  font-size:19px;
+  color:#e6e0d6;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.gallery img:first-child{
+  grid-column:span 2;
+  height:380px;
+}
+
+.donation{
+  text-align:center;
+  padding:45px 25px;
+}
+
+.donation-text{
+  font-size:19px;
+  margin-bottom:30px;
+}
+
+.paypal{
+  display:inline-block;
+  padding:16px 34px;
+  border-radius:50px;
+  background:#d7c397;
+  color:#090b0e;
+  text-decoration:none;
+  font-family:Arial,sans-serif;
+  font-size:18px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.paypal:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px rgba(215,195,151,.3);
 }
 
 footer{
   text-align:center;
-  padding:50px 20px;
-  color:#9d9a95;
-  border-top:1px solid #292d32;
+  padding:45px 20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:#aaa29a;
+  font-size:15px;
 }
 
 @media(max-width:600px){
-  .hero{
-    min-height:620px;
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img:first-child{
+    grid-column:span 1;
+    height:300px;
+  }
+
+  .gallery img{
+    height:260px;
   }
 
   .card{
-    padding:28px 20px;
-  }
-
-  h2{
-    font-size:27px;
-  }
-
-  p{
-    font-size:17px;
+    padding:28px 18px;
   }
 }
 </style>
@@ -131,62 +171,114 @@ footer{
 
 <section class="hero">
   <div class="hero-content">
+
     <div class="line"></div>
 
     <h1>Sergej Kampf</h1>
 
-    <p>In liebevoller Erinnerung</p>
+    <div class="subtitle">
+      In liebevoller Erinnerung
+    </div>
 
     <div class="line"></div>
 
-    <p>
-      Ein Mensch geht niemals ganz,<br>
-      solange er in unseren Herzen weiterlebt.
-    </p>
+    <div class="quote">
+      „Ein Mensch geht niemals ganz,<br>
+      solange er in unseren Herzen weiterlebt.“
+    </div>
+
   </div>
 </section>
 
-<main class="container">
+<main>
 
-  <section class="card">
-    <h2>Eine liebevolle Erinnerung</h2>
+<section class="card">
+  <h2>🕯️ Zum Gedenken</h2>
 
-    <p>
-      Diese Seite ist Sergej gewidmet – als Ort der Erinnerung,
-      des Innehaltens und des Gedenkens.
-    </p>
+  <p>
+    Hallo ihr Lieben,
+  </p>
 
-    <p>
-      Die gemeinsamen Momente, die Erinnerungen und die Spuren,
-      die ein Mensch in unserem Leben hinterlässt, bleiben.
-    </p>
-  </section>
+  <p>
+    leider mussten wir uns von unserem geliebten Onkel
+    verabschieden. Sergej ist nach schwerer Krankheit
+    an einer Lungenentzündung und Blutvergiftung
+    verstorben.
+  </p>
 
-  <section class="card">
-    <div class="quote">
-      „Was man tief in seinem Herzen besitzt,
-      kann man nicht durch den Tod verlieren.“
-    </div>
-  </section>
+  <p>
+    Als Familie möchten wir ihn auf seinem letzten Weg
+    begleiten und ihm einen würdevollen Abschied
+    ermöglichen.
+  </p>
 
-  <section class="card">
-    <h2>Unvergessen</h2>
+  <p>
+    Von Herzen danken wir euch für eure Anteilnahme,
+    eure Unterstützung und jedes liebe Wort.
+  </p>
+</section>
 
-    <p>
-      Sergej bleibt in den Herzen der Menschen,
-      die ihn gekannt, geliebt und begleitet haben.
-    </p>
+<section class="card">
+  <h2>❤️ Erinnerungen</h2>
 
-    <p>
-      Mögen die Erinnerungen an gemeinsame Zeiten
-      immer einen besonderen Platz behalten.
-    </p>
-  </section>
+  <div class="gallery">
+
+    <img src="foto1.jpg" alt="Sergej in liebevoller Erinnerung">
+
+    <img src="foto2.jpg" alt="Erinnerung an Sergej">
+
+    <img src="foto3.jpg" alt="Sergej am Meer">
+
+    <img src="foto4.jpg" alt="Erinnerung an Sergej">
+
+    <img src="foto5.jpg" alt="Sergej in schöner Erinnerung">
+
+  </div>
+</section>
+
+<section class="card">
+  <h2>Unvergessen</h2>
+
+  <p>
+    Sergej bleibt in den Herzen der Menschen,
+    die ihn gekannt, geliebt und begleitet haben.
+  </p>
+
+  <p>
+    Mögen die Erinnerungen an gemeinsame Momente
+    immer einen besonderen Platz in unseren Herzen behalten.
+  </p>
+</section>
+
+<section class="card donation">
+
+  <h2>🙏 Unterstützung</h2>
+
+  <p class="donation-text">
+    Wir möchten Sergej auf seinem letzten Weg
+    begleiten und freuen uns über jede noch so
+    kleine Unterstützung.
+  </p>
+
+  <a
+    class="paypal"
+    href="https://www.paypal.com/pool/9sEga94eyO"
+    target="_blank"
+    rel="noopener noreferrer">
+    💛 Über PayPal unterstützen
+  </a>
+
+  <p>
+    Von Herzen danke für eure Unterstützung
+    und euer Mitgefühl.
+  </p>
+
+</section>
 
 </main>
 
 <footer>
-  In liebevoller Erinnerung an Sergej Kampf
+  In liebevoller Erinnerung an Sergej Kampf 🕯️
 </footer>
 
 </body>
